@@ -4,9 +4,16 @@ version = "0.1.0"
 description = "Add a short description here"
 authors = ["Jermiah Joseph <jermiahjoseph98@gmail.com>"]
 channels = ["conda-forge", "bioconda"]
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64"]
+
+[system-requirements]
+linux = "5.4.203"
 
 [tasks]
+dag = "snakemake -F --dag | dot -Tsvg > resources/dag.svg"
+rulegraph = "snakemake -F --rulegraph | dot -Tsvg > resources/rulegraph.svg"
+filegraph = "snakemake -F --filegraph | dot -Tsvg > resources/filegraph.svg"
+graphs = { depends_on = ["dag", "rulegraph", "filegraph"] }
 
 [dependencies]
 snakemake = "==7.32.4"

@@ -9,6 +9,9 @@ metadata:
   treatmentMetadata:
     description: Contains the meta data about the treatment/perturbation in each well of each plate.
     url: https://ndownloader.figshare.com/files/41408649
+  genomeMetadata:
+    description: Contains the meta data about the genome build used in the assay.
+    url: ccleparams/references_gtex_gencode.v29.GRCh38.ERCC.genes.collapsed_only.gtf
 
 treatmentResponse:
   description: Contains the response of each cell line to each treatment.
@@ -16,9 +19,7 @@ treatmentResponse:
 
 molecularProfiles:
   rnaseq:
-    description: Gene expression TPM values of all genes for DepMap cell lines. 
-      Values are inferred from RNA-seq data using the RSEM tool and are reported after log2 transformation, 
-      using a pseudo-count of 1; log2(TPM+1).
+    description: RNA-seq gene expression data. TPM values are log2 transformed.
     tool: RSEM
-    url: https://ndownloader.figshare.com/files/43346994
+    url: https://data.broadinstitute.org/ccle/CCLE_RNAseq_rsem_genes_tpm_20180929.txt.gz
     
