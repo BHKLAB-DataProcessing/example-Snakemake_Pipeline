@@ -1,0 +1,24 @@
+name: example-Snakemake_Pipeline
+description: This is an example pipeline for Snakemake. Uses some data from PRISM. 
+url: https://www.theprismlab.org.
+
+metadata:
+  sampleMetadata: 
+    description: Contains the meta data about the cell lines screened in the assay.
+    url: https://ndownloader.figshare.com/files/41408658
+  treatmentMetadata:
+    description: Contains the meta data about the treatment/perturbation in each well of each plate.
+    url: https://ndownloader.figshare.com/files/41408649
+
+treatmentResponse:
+  description: Contains the response of each cell line to each treatment.
+  url: https://ndownloader.figshare.com/files/41408703
+
+molecularProfiles:
+  rnaseq:
+    description: Gene expression TPM values of all genes for DepMap cell lines. 
+      Values are inferred from RNA-seq data using the RSEM tool and are reported after log2 transformation, 
+      using a pseudo-count of 1; log2(TPM+1).
+    tool: RSEM
+    url: https://ndownloader.figshare.com/files/43346994
+    
